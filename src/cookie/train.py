@@ -8,7 +8,6 @@ import wandb
 
 from torch import nn, optim
 import matplotlib.pyplot as plt
-import numpy as np
 
 app = typer.Typer()
 
