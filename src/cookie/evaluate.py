@@ -3,9 +3,7 @@ from cookie.data import corrupt_mnist
 import torch
 import typer
 
-from torch import nn, optim
-import matplotlib.pyplot as plt
-import numpy as np
+from torch import nn
 
 app = typer.Typer()
 

@@ -5,7 +5,6 @@ import typer
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 
-from torch import nn, optim
 import matplotlib.pyplot as plt
 import numpy as np
 
