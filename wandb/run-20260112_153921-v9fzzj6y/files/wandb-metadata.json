@@ -1,0 +1,28 @@
+{
+  "os":  "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python":  "CPython 3.12.3",
+  "startedAt":  "2026-01-12T14:39:21.232228Z",
+  "program":  "/home/elisa/cookie_mlpos/./src/cookie/train.py",
+  "codePath":  "src/cookie/train.py",
+  "codePathLocal":  "src/cookie/train.py",
+  "git":  {
+    "remote":  "https://github.com/elisabethnielsen/cookie_mlpos.git",
+    "commit":  "fdcc29f668a8e7b82b8d3bfd65449b369f54ef15"
+  },
+  "email":  "s245822@dtu.dk",
+  "root":  "/home/elisa/cookie_mlpos",
+  "host":  "elsePC",
+  "executable":  "/home/elisa/cookie_mlpos/.venv/bin/python3",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "disk":  {
+    "/":  {
+      "total":  "1081101176832",
+      "used":  "28519481344"
+    }
+  },
+  "memory":  {
+    "total":  "12096573440"
+  },
+  "writerId":  "vcxceutknsus2wo93x9egkof1cyu8800"
+}

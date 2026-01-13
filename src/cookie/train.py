@@ -13,7 +13,7 @@ app = typer.Typer()
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 
-def train(lr: float = 1e-3, batch_size: int = 32, epochs: int = 10) -> None:
+def train(lr: float = 1e-3, batch_size: int = 32, epochs: int = 4) -> None:
     """Train a model on MNIST."""
     print("Training day and night")
     print(lr)
@@ -60,14 +60,30 @@ def train(lr: float = 1e-3, batch_size: int = 32, epochs: int = 10) -> None:
 
         #training_losses.append(sum(running_loss)/len(train_set))
         print(f'Epoch {e+1}: Training Loss {sum(epoch_loss)/len(epoch_loss)}. Training accuracy {sum(epoch_accuracy)/len(epoch_accuracy)}')
+        accuracy=sum(epoch_accuracy)/len(epoch_accuracy)
     print("Training complete")
+
+    # save model
     torch.save(model.state_dict(), "models/model.pth")
+    artifact = wandb.Artifact(
+        name="corrupt_mnist_model",
+        type="model",
+        description="A model trained to classify corrupt MNIST images",
+        metadata={"accuracy": accuracy},
+    )
+    artifact.add_file("models/model.pth")
+    wandb.log_artifact(artifact)
+
+
+    # Create figure 
     fig, axs = plt.subplots(1, 2, figsize=(15, 5))
     axs[0].plot(statistics["train_loss"])
     axs[0].set_title("Train loss")
     axs[1].plot(statistics["train_accuracy"])
     axs[1].set_title("Train accuracy")
+    # Save figure
     fig.savefig("reports/figures/training_statistics.png")
+    wandb.log({'Training_stats':wandb.Image(fig)})
 
 
 
