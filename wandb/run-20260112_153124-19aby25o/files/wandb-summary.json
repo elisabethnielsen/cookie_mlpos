@@ -1,0 +1,1 @@
+{"_runtime":97,"_timestamp":1.7682283800902915e+09,"_step":9380,"loss":0.4020150601863861,"accuracy":0.9375,"Training_stats":{"_type":"image-file","sha256":"2bd487c0f761dff63b4f259b1f179f4a1f209331b79261b62e3e5cd1cd0b36b0","size":41904,"path":"media/images/Training_stats_9380_2bd487c0f761dff63b4f.png","format":"png","width":1500,"height":500},"_wandb":{"runtime":97}}
